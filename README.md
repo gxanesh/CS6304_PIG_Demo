@@ -1,19 +1,41 @@
 # PIG_Demo
 
-### General Information (Cloudera):
-
+### General Information (access your VM):
 * Operating System:         Mac -> Microsoft Remote Desktop, Windows -> Default Remote Desktop, Ubuntu -> Remmina
-* Machine:                  cqs-cs6304-xxx.ats.mst.edu
-* User:                     cloudera
-* Default Password:         stu-pass
-* Change Password Command:  sudo passwd cloudera
+* Machine:                  cs6304-<mst_username>-01.class.mst.edu
+* User:                     <mst_username>
+* Default Password:         <mst_password>
 
-* "Firefox already running" error solve by command:     killall -SIGTERM firefox
+### configure PIG  
+wget https://dlcdn.apache.org/pig/pig-0.17.0/pig-0.17.0.tar.gz  
+tar -xvf pig-0.17.0.tar.gz  
+mv pig-0.17.0/ /opt/pig  
 
-* "Eclipse workspace in use" error solve by command:
-* cd ~/yourWorkspaceDirectory/.metadata
-* rm .lock
+#Set up PIG profile  
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre  
+export PIG_HOME=/opt/pig  
+export PATH=$PATH:$PIG_HOME/bin  
+export PIG_CLASSPATH=$HADOOP_HOME/conf  
 
-* "Eclipse resource is out of sync" error solve by:
-* Windows -> Preferences -> General -> Workspace
-* Check "Refresh using native tool or polling"
+
+#Below part is not for the students
+#we can change in .bashrc instead of exporting the path variables every time
+#instead of changing at .bashrc we create script under profile.d (while doing in your own VM)
+#sudo tee /etc/profile.d/pig.sh <<'EOF'
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+#export PIG_HOME=/opt/pig
+#export PATH=$PATH:$PIG_HOME/bin
+#export PIG_CLASSPATH=$HADOOP_HOME/conf
+#EOF
+
+#Set up PIG profile(for script we  need like below)
+#cat >/etc/profile.d/pig.sh <<'EOF'
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+#export PIG_HOME=/opt/pig
+#export PATH=$PATH:$PIG_HOME/bin
+#export PIG_CLASSPATH=$HADOOP_HOME/conf
+#EOF
+
+
+
+
