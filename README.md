@@ -6,7 +6,7 @@
 * User:                     <mst_username>
 * Default Password:         <mst_password>
 
-### configure PIG  
+### configure PIG (if it is not already installed)
 wget https://dlcdn.apache.org/pig/pig-0.17.0/pig-0.17.0.tar.gz  
 tar -xvf pig-0.17.0.tar.gz  
 mv pig-0.17.0/ /opt/pig  
