@@ -7,7 +7,9 @@
 * Default Password:         <mst_password>
 
 ### Start Pig Session
-```pig -x local```
+```
+pig -x local
+```
 
 ### configure PIG (if it is not already installed)
 wget https://dlcdn.apache.org/pig/pig-0.17.0/pig-0.17.0.tar.gz  
