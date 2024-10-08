@@ -43,5 +43,21 @@ export PIG_CLASSPATH=$HADOOP_HOME/conf
 #EOF  
 
 
+### Hadoop Commands
+Open new tab on the terminal
 
+Check if Hadoop Deamons are Running:
+```
+jps
+```
+If Hadoop Daemons are not Running correctly, run following commands to stop and restart the daemons:
+```
+stop-all.sh
+hadoop namenode -format
+start-all.sh
+```
+Check again:
+```
+jps
+```
 
