@@ -6,7 +6,8 @@
 * User:                     <mst_username>
 * Default Password:         <mst_password>
 
-### Start Pig Session
+### Start PIG Session
+Open Terminal and run following command:
 ```
 pig -x local
 ```
