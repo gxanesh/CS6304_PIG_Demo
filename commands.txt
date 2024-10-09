@@ -32,4 +32,4 @@ CommonChapWords = Filter WordsFinal By (chapterTotal == (LONG)MaxChapter.chapter
 *** --- ***
 
 //To run the pig script:
-pig -x local '/home/cloudera/Downloads/PIG_Demo-master/script.pig'
+pig -x local '/home/gs37r/Downloads/PIG_Demo-master/script.pig'
