@@ -1,4 +1,4 @@
-AllLines = LOAD '/home/cloudera/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (line: chararray, chapterCounter: int);
+AllLines = LOAD '/home/gs37r/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (line: chararray, chapterCounter: int);
 
 AllWords = foreach AllLines generate flatten(TOKENIZE(line)) as word, chapterCounter;
 
@@ -20,4 +20,4 @@ LimitedWords = Limit OrderedWords 3;
 
 Dump LimitedWords;
 
-STORE LimitedWords INTO '/home/cloudera/Downloads/PIG_Demo-master/output';
+STORE LimitedWords INTO '/home/gs37r/Downloads/PIG_Demo-master/output';
