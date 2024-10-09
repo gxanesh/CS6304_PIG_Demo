@@ -1,6 +1,6 @@
 pig -x local
 
-AllLines = LOAD '/home/cloudera/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (line: chararray, chapterCounter: int);
+AllLines = LOAD '/home/gs37r/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (line: chararray, chapterCounter: int);
 
 AllWords = foreach AllLines generate flatten(TOKENIZE(line)) as word, chapterCounter;
 
@@ -31,7 +31,5 @@ MaxChapter = Limit OrderedChapter 1;
 CommonChapWords = Filter WordsFinal By (chapterTotal == (LONG)MaxChapter.chapterCounter);
 *** --- ***
 
-
-ctrl+z
-
+//To run the pig script:
 pig -x local '/home/cloudera/Downloads/PIG_Demo-master/script.pig'
